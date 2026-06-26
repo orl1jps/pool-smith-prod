@@ -1,0 +1,255 @@
+/* ============================================================
+   Pool Smith — hand-written design system
+   Reproduces the "Pool Services" (Smartdatasoft) theme look:
+   primary #005395, accent #28bceb, Lato headings / Open Sans body.
+   ============================================================ */
+
+:root {
+  /* Brand */
+  --brand: #005395;
+  --brand-dark: #00406f;
+  --brand-tint: #e7f0f6;
+  --accent: #28bceb;
+  --accent-dark: #1aa7d4;
+
+  /* Ink / text */
+  --ink: #1f2a33;
+  --text: #5a6670;
+  --muted: #7a8288;
+  --heading: #2b343b;
+
+  /* Surfaces */
+  --bg: #ffffff;
+  --bg-light: #f5f7f9;
+  --bg-soft: #eef2f5;
+  --border: #e4e8eb;
+
+  /* Footer */
+  --footer-bg: #1b2127;
+  --footer-strip: #151a1f;
+  --footer-text: #9aa3ab;
+  --footer-heading: #ffffff;
+
+  /* Shape */
+  --radius: 6px;
+  --radius-lg: 10px;
+  --radius-pill: 999px;
+  --container: 1170px;
+  --gutter: clamp(16px, 4vw, 30px);
+
+  --shadow-sm: 0 2px 10px rgba(20, 40, 60, 0.07);
+  --shadow: 0 14px 36px rgba(20, 40, 60, 0.12);
+
+  --font-heading: var(--font-lato), "Helvetica Neue", Arial, sans-serif;
+  --font-body: var(--font-open-sans), "Helvetica Neue", Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  color: var(--heading);
+  line-height: 1.2;
+  margin: 0 0 0.6em;
+  font-weight: 700;
+}
+
+h1 { font-size: clamp(2rem, 4vw, 3rem); }
+h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); }
+h3 { font-size: 1.35rem; }
+
+p { margin: 0 0 1.15em; }
+
+a {
+  color: var(--brand);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover { color: var(--accent); }
+
+img { max-width: 100%; height: auto; display: block; }
+
+ul, ol { margin: 0 0 1.15em; padding-left: 1.2em; }
+
+/* ---------- Layout ---------- */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section {
+  padding-block: clamp(48px, 7vw, 90px);
+}
+.section--tint { background: var(--bg-light); }
+.section--brand { background: var(--brand); color: #cfe0ec; }
+.section--brand h2 { color: #fff; }
+
+.grid {
+  display: grid;
+  gap: clamp(20px, 3vw, 32px);
+}
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+@media (max-width: 980px) {
+  .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 620px) {
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+}
+
+/* ---------- Section titles (poolserv_simple_title) ---------- */
+.section-title {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto clamp(32px, 5vw, 56px);
+}
+.section-title .eyebrow {
+  display: inline-block;
+  color: var(--accent);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+.section-title h2 {
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-bottom: 22px;
+}
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  transform: translateX(-50%);
+  border-radius: 3px;
+}
+.section-title p { color: var(--text); margin-bottom: 0; }
+.section-title--left { text-align: left; margin-inline: 0; }
+.section-title--left h2::after { left: 0; transform: none; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  border-radius: var(--radius-pill);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  line-height: 1;
+}
+.btn-primary { background: var(--brand); color: #fff; }
+.btn-primary:hover { background: var(--accent); color: #fff; }
+.btn-accent { background: var(--accent); color: #fff; }
+.btn-accent:hover { background: var(--brand); color: #fff; }
+.btn-outline { background: transparent; border-color: #fff; color: #fff; }
+.btn-outline:hover { background: #fff; color: var(--brand); }
+.btn-ghost { background: transparent; border-color: var(--brand); color: var(--brand); }
+.btn-ghost:hover { background: var(--brand); color: #fff; }
+
+/* ---------- Cards ---------- */
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.card__body { padding: 24px; }
+.card__title { margin-bottom: 0.5rem; }
+.card__title a { color: var(--heading); }
+.card__title a:hover { color: var(--brand); }
+
+/* ---------- Page hero / banner ---------- */
+.page-banner {
+  position: relative;
+  background: var(--brand-dark) center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding-block: clamp(70px, 10vw, 130px);
+}
+.page-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 64, 111, 0.78), rgba(0, 40, 70, 0.85));
+}
+.page-banner > .container { position: relative; z-index: 1; }
+.page-banner h1 { color: #fff; margin-bottom: 0.4rem; }
+.breadcrumb {
+  font-size: 0.9rem;
+  color: #bcd4e6;
+  display: flex;
+  gap: 0.5em;
+  justify-content: center;
+}
+.breadcrumb a { color: #fff; }
+.breadcrumb a:hover { color: var(--accent); }
+
+/* ---------- Utility ---------- */
+.text-center { text-align: center; }
+.lead { font-size: 1.1rem; color: var(--text); }
+.eyebrow {
+  color: var(--accent);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.85rem;
+}
+.cta-band {
+  background: var(--brand);
+  color: #fff;
+  text-align: center;
+}
+.cta-band h2 { color: #fff; }
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0);
+  white-space: nowrap; border: 0;
+}

@@ -1,0 +1,76 @@
+.box {
+  display: block;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 38px 30px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.box:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+.compact {
+  text-align: left;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 18px;
+  row-gap: 4px;
+  align-items: start;
+  padding: 28px;
+}
+
+.iconWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  background: var(--brand-tint);
+  color: var(--brand);
+  margin: 0 auto 18px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.compact .iconWrap {
+  width: 56px;
+  height: 56px;
+  margin: 0;
+  grid-row: span 2;
+}
+.box:hover .iconWrap {
+  background: var(--brand);
+  color: #fff;
+}
+
+.title {
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+  color: var(--heading);
+}
+.compact .title {
+  margin-bottom: 4px;
+  align-self: center;
+}
+.desc {
+  color: var(--text);
+  font-size: 0.94rem;
+  margin-bottom: 12px;
+}
+.compact .desc {
+  grid-column: 2;
+  margin-bottom: 0;
+}
+.more {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--brand);
+}
+.compact .more {
+  grid-column: 2;
+}

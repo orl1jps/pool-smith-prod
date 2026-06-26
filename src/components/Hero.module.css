@@ -1,0 +1,107 @@
+.hero {
+  position: relative;
+  height: clamp(440px, 72vh, 720px);
+  overflow: hidden;
+  background: var(--brand-dark);
+}
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease;
+}
+.active {
+  opacity: 1;
+  visibility: visible;
+}
+.bg {
+  object-fit: cover;
+  z-index: 0;
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 40, 70, 0.72) 0%,
+    rgba(0, 40, 70, 0.45) 55%,
+    rgba(0, 40, 70, 0.3) 100%
+  );
+  z-index: 1;
+}
+.inner {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: #fff;
+}
+.sub {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  font-size: 0.95rem;
+  margin: 0 0 14px;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.6s ease 0.2s;
+}
+.heading {
+  color: #fff;
+  font-size: clamp(2.2rem, 5.5vw, 4rem);
+  font-weight: 900;
+  line-height: 1.08;
+  max-width: 16ch;
+  margin: 0 0 28px;
+  transform: translateY(24px);
+  opacity: 0;
+  transition: all 0.6s ease 0.35s;
+}
+.heading span {
+  display: block;
+}
+.actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  transform: translateY(24px);
+  opacity: 0;
+  transition: all 0.6s ease 0.5s;
+}
+.active .sub,
+.active .heading,
+.active .actions {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.dots {
+  position: absolute;
+  bottom: 26px;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s ease;
+}
+.dotActive {
+  background: var(--accent);
+  border-color: var(--accent);
+}

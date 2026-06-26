@@ -1,0 +1,88 @@
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+.featured {
+  background: var(--brand);
+  color: #fff;
+  border-color: var(--brand);
+}
+
+.title {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 18px;
+}
+.featured .title {
+  color: #fff;
+}
+
+.price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 22px;
+}
+.end {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+.featured .end {
+  color: #bcd9ec;
+}
+.amount {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 3.4rem;
+  line-height: 1;
+  color: var(--brand);
+  margin: 6px 0;
+}
+.amount sup {
+  font-size: 1.4rem;
+  font-weight: 700;
+  vertical-align: super;
+  margin-right: 2px;
+}
+.featured .amount {
+  color: #fff;
+}
+.per {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.featured .per {
+  color: #bcd9ec;
+}
+
+.desc {
+  font-size: 0.92rem;
+  color: var(--text);
+  margin-bottom: 26px;
+  flex: 1;
+}
+.featured .desc {
+  color: #d7e8f3;
+}
+.featured :global(.btn-primary) {
+  background: var(--accent);
+}
+.featured :global(.btn-primary):hover {
+  background: #fff;
+  color: var(--brand);
+}

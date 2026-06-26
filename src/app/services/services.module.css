@@ -1,0 +1,52 @@
+.maintenance {
+  background:
+    linear-gradient(rgba(0, 40, 70, 0.92), rgba(0, 64, 111, 0.92)),
+    url("/images/uploads/2016/11/category-img-07.jpg") center / cover no-repeat;
+}
+.maintenance :global(.section-title h2) {
+  color: #fff;
+}
+/* compact icon boxes on dark background */
+.maintenance :global(.grid) > * {
+  background: rgba(255, 255, 255, 0.97);
+}
+
+.featured {
+  margin-top: 8px;
+}
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+.media {
+  position: relative;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+}
+.img {
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.card:hover .img {
+  transform: scale(1.06);
+}
+.body {
+  padding: 18px 20px 22px;
+}
+.title {
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+.desc {
+  font-size: 0.88rem;
+  color: var(--text);
+  margin: 0;
+}

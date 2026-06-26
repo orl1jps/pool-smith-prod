@@ -1,0 +1,60 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: clamp(32px, 5vw, 64px);
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+.heading {
+  font-size: 1.7rem;
+  margin-bottom: 14px;
+}
+.intro p {
+  color: var(--text);
+}
+.points {
+  list-style: none;
+  margin: 24px 0;
+  padding: 0;
+}
+.points li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  color: var(--text);
+}
+.icon {
+  color: var(--brand);
+  flex-shrink: 0;
+}
+.help {
+  background: var(--bg-light);
+  border-radius: var(--radius);
+  padding: 18px 22px;
+  border-left: 4px solid var(--accent);
+}
+.help strong {
+  display: block;
+  font-family: var(--font-heading);
+  color: var(--heading);
+  margin-bottom: 4px;
+}
+.help a {
+  font-size: 1.3rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--brand);
+}
+
+.formCard {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: clamp(26px, 4vw, 40px);
+  box-shadow: var(--shadow);
+  border-top: 4px solid var(--accent);
+}

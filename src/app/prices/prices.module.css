@@ -1,0 +1,44 @@
+.priceCard {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: stretch;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.priceCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+.priceImg {
+  width: 120px;
+  height: auto;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.priceBody {
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.priceTitle {
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+.priceTag {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 1.6rem;
+  color: var(--brand);
+  line-height: 1;
+}
+.priceTag small {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}

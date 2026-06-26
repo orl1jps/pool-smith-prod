@@ -1,0 +1,80 @@
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+.viewport {
+  position: relative;
+  display: grid;
+}
+.quote {
+  grid-area: 1 / 1;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.mark {
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  line-height: 0.5;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 18px;
+}
+.message {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: var(--text);
+  font-style: italic;
+  margin-bottom: 22px;
+}
+.cite {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--brand);
+  font-size: 1.05rem;
+}
+.role {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.boxed {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 40px 34px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+}
+
+.dots {
+  display: flex;
+  gap: 9px;
+  justify-content: center;
+  margin-top: 26px;
+}
+.dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 0;
+  background: var(--bg-soft);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s ease;
+}
+.dotActive {
+  background: var(--accent);
+}
